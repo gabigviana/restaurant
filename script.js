@@ -1,3 +1,22 @@
+fetch("http://kea-alt-del.dk/t5/api/categories")
+    .then(res => res.json())
+    .then(createCategories)
+
+function createCategories(data) {
+    console.log(data)
+    data.forEach(function (OneCat) {
+        const section = document.createElement("section");
+        const h2 = document.createElement("h2");
+        h2.textContent = oneCat;
+        section.appendChild(h2);
+
+        console.log(section)
+
+    })
+}
+
+
+
 fetch("https://kea-alt-del.dk/t5/api/productlist")
 
     .then(function (response) {
