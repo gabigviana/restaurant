@@ -1,22 +1,3 @@
-fetch("http://kea-alt-del.dk/t5/api/categories")
-    .then(res => res.json())
-    .then(createCategories)
-
-function createCategories(data) {
-    console.log(data)
-    data.forEach(function (OneCat) {
-        const section = document.createElement("section");
-        const h2 = document.createElement("h2");
-        h2.textContent = oneCat;
-        section.appendChild(h2);
-
-        console.log(section)
-
-    })
-}
-
-
-
 fetch("https://kea-alt-del.dk/t5/api/productlist")
 
     .then(function (response) {
@@ -41,14 +22,13 @@ function showSingleDish(dish) {
     copy.querySelector("h3").textContent = dish.name;
 
 
-
     if (dish.discount) {
         copy.querySelector(".price-full span").textContent = dish.price;
         const newPrice = Math.round(dish.price - dish.price * dish.discount / 100);
 
         copy.querySelector(".price-full span").textContent = newPrice;
     } else {
-        copy.querySelector(".price.discount").remove()
+        copy.querySelector(".price-discount").remove()
         copy.querySelector(".price-full span").textContent = dish.price
     }
 
@@ -56,6 +36,7 @@ function showSingleDish(dish) {
     const whoIsYourDaddy = document.querySelector("#starters")
     whoIsYourDaddy.appendChild(copy)
 }
+
 
 //var modal = document.getElementById("myModal");
 
