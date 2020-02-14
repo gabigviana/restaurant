@@ -10,54 +10,78 @@
 </head>
 
 <body>
+
+    <h1>Friendly Potato</h1>
+
     <div id="wrapper">
         <header>
             <nav>
-                <a href="">FIND OS</a>
-                <a href="">DRINKS</a>
-                <a href="">KONTAKT</a>
-                <a href="">BESTIL BORD</a>
-                <a href="">DRINKS</a>
-                <a class="active" href="#home">MENU</a>
+                <a href="#">HOME</a>
+                <a href="#kontakt">KONTAKT</a>
             </nav>
         </header>
     </div>
 
     <main>
-        <h1>Friendly Potato</h1>
-
-        <section id="starters">
-            <h2>Starters</h2>
-
-            <template id="dishTemplate">
-                <article class="course">
-                    <header>
-                        <h3>Russian Ringbread</h3>
-
-                       <!-- <p class="soldout">Sold Out</p> -->
-
-                        <img src="/assets/ringbroed-sm.jpg" alt="food">
-                        <p class="price price-discount"><span>69</span>,-</p>
-                        <p class="price price-full"><span>69</span>,-</p>
-                    </header>
-
-                    <section class="info">
-                        <p>Russisk ringbrød af Karapatisk mel </p>
-
-                               <button id="myBtn">
-                                <div class="tooltip"><img src="assets/information-icon.png" alt="info" width="20px" height="20px">
-                                    <span class="tooltiptext">Læs mere</span>
-                                </div>
-
-                            </button>
 
 
-                    </section>
-                </article>
-            </template>
-        </section>
+        <template id="dishTemplate">
+            <article class="course">
+                <header>
+                    <h3>Russian Ringbread</h3>
+
+                    <p class="soldout">Sold Out</p>
+
+                    <img id="dishImg" src="/assets/ringbroed-sm.jpg" alt="">
+
+                    <p class="price price-before"><span class="tag">69</span>,-</p>
+                    <p class="price price-after"><span class="tag">69</span>,-</p>
+
+                </header>
+
+                <section class="info">
+
+                    <p class="short-description">Russisk ringbrød af Karapatisk mel </p>
+
+                    <button id="myBtn">
+                        <div class="tooltip"><img src="assets/information-icon.png" alt="info" width="20px" height="20px">
+                            <span class="tooltiptext">Læs mere</span>
+                        </div>
+                    </button>
+
+
+                    <button id="bestilBtn">BESTIL</button>
+
+                </section>
+            </article>
+        </template>
 
     </main>
+
+    <div class="modal-background hide">
+        <div class="modal-content">
+            <h3 class="modal-name">NAME</h3>
+            <img src="" alt="" class="modal-image" />
+            <p class="modal-description">LONG DESCRIPTION</p>
+            <p class="modal-vegetarian"><img src="assets/vegan-symbol-png.png" alt="" width="20px" height="20px"></p>
+            <p class="modal-dairy"><img src="/assets/contains-dairy-2-512.png" alt="" width="20px" height=""></p>
+            <p class="modal-alcohol">Contains alcohol</p>
+
+            <h4 class="modal-price">PRICE</h4>
+        </div>
+    </div>
+
+    <footer>
+        <section>
+            <h3 id="kontakt">KONTAKT</h3>
+
+            <h4>Friendly Potato</h4>
+            <address>
+                <p>Vesterbrogade 23</p>
+                <p><a href="tel:60225464">+45 60 22 54 64</a></p>
+            </address>
+        </section>
+    </footer>
 
     <script src="script.js"></script>
 </body>
