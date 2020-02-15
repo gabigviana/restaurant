@@ -1,8 +1,7 @@
-// 3. put alcohol
-// 4. add css animation - "magic"
+
 // 5. fix width
 // 6. change the order on the  + fix nav:hover
-// 7. make it go to footer one kontakt is pressed
+
 
 
 const modal = document.querySelector(".modal-background");
@@ -25,7 +24,7 @@ function createCategories(data) {
         const a = document.createElement("a");
         a.setAttribute("href", `#${oneCat}`);
         a.textContent = oneCat;
-        document.querySelector("#wrapper>header>nav").appendChild(a);
+        document.querySelector("#wrapper>header>nav>.navbar").appendChild(a);
 
 
         const section = document.createElement("section");
@@ -80,6 +79,14 @@ function showSingleDish(dish) {
         copy.querySelector("#dishImg").src = smallImg;
     }
 
+    if (dish.soldout) {
+        copy.querySelector(".sold-out").style.display = "block";
+    }
+
+    else {
+        copy.querySelector(".sold-out").style.display = "none";
+    }
+
 
     if (dish.discount) {
         copy.querySelector(".price-before span").textContent = dish.price;
@@ -112,27 +119,38 @@ function showDetails(data) {
     modal.querySelector(".modal-description").textContent = data.longdescription;
     modal.querySelector(".modal-price").textContent = data.price;
 
+
+    // check for vegetarian
     if (data.vegetarian) {
         modal.querySelector(".modal-vegetarian").style.display = "block";
-    }
-
-    else {
+    } else {
         modal.querySelector(".modal-vegetarian").style.display = "none";
     }
 
 
- if (data.allergens.some(function(allergen)  {
-                          return allergen == "laktose";
-                          }))
- {
-     modal.querySelector(".modal-dairy").style.display ="block";
+    // check for allergens
+    if (data.allergens.some(function (allergen) {
+            return allergen == "laktose";
+        })) {
+        modal.querySelector(".modal-dairy").style.display = "block";
 
- } else {
-     modal.querySelector(".modal-dairy").style.display = "none";
- }
+    } else {
+        modal.querySelector(".modal-dairy").style.display = "none";
+    }
 
+    //alcohol
+    if (data.alcohol) {
+        modal.querySelector(".modal-alcohol").style.display = "block";
+        modal.querySelector(".modal-alcohol span").textContent = data.alcohol;
+    }
+     else {
+         modal.querySelector(".modal-alcohol").style.display = "none";
+     }
 
+    // show modal
     modal.classList.remove("hide");
+
+
 
 }
 

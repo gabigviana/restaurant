@@ -4,20 +4,22 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friendly Potato</title>
+    <title>Friendly Potato Restaurant</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/puz8jqn.css">
 </head>
 
 <body>
 
-    <h1>Friendly Potato</h1>
+    <h1>Friendly Potato Restaurant</h1>
 
     <div id="wrapper">
         <header>
             <nav>
+               <div class="navbar">
                 <a href="#">HOME</a>
                 <a href="#kontakt">KONTAKT</a>
+                </div>
             </nav>
         </header>
     </div>
@@ -30,9 +32,11 @@
                 <header>
                     <h3>Russian Ringbread</h3>
 
-                    <p class="soldout">Sold Out</p>
 
-                    <img id="dishImg" src="/assets/ringbroed-sm.jpg" alt="">
+                    <div class="image-dish">
+                        <div class="sold-out"></div>
+                        <img id="dishImg" src="/assets/ringbroed-sm.jpg" alt="">
+                    </div>
 
                     <p class="price price-before"><span class="tag">69</span>,-</p>
                     <p class="price price-after"><span class="tag">69</span>,-</p>
@@ -43,14 +47,10 @@
 
                     <p class="short-description">Russisk ringbrød af Karapatisk mel </p>
 
-                    <button id="myBtn">
-                        <div class="tooltip"><img src="assets/information-icon.png" alt="info" width="20px" height="20px">
-                            <span class="tooltiptext">Læs mere</span>
-                        </div>
-                    </button>
+                    <button id="Btn">Read more</button>
 
+                    <div class="tooltip"><span class="tooltiptext">vegetar</span></div>
 
-                    <button id="bestilBtn">BESTIL</button>
 
                 </section>
             </article>
@@ -65,8 +65,7 @@
             <p class="modal-description">LONG DESCRIPTION</p>
             <p class="modal-vegetarian"><img src="assets/vegan-symbol-png.png" alt="" width="20px" height="20px"></p>
             <p class="modal-dairy"><img src="/assets/contains-dairy-2-512.png" alt="" width="20px" height=""></p>
-            <p class="modal-alcohol">Contains alcohol</p>
-
+            <p class="modal-alcohol"><span>Contains alcohol</span>% Alcohol</p>
             <h4 class="modal-price">PRICE</h4>
         </div>
     </div>

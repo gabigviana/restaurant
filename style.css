@@ -20,20 +20,26 @@ body {
 }
 
 
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
 nav {
     background-color: black;
-    overflow: hidden;
-    padding: 16px;
+    width: 100%;
 }
 
 nav a {
-    float: center;
+    display: block;
     color: #f2f2f2;
     font-family: 'brandon-grotesque', sans-serif;
     text-transform: uppercase;
     text-align: center;
-    padding: 16px 18px;
-    margin: 16px 18px;
+    padding: 18px 40px;
     text-decoration: none;
     font-size: 18px;
 }
@@ -43,16 +49,13 @@ nav a:hover {
     color: black;
 }
 
-nav a.active {
-    background-color: #EB8E00;
-    color: white;
-}
 
 footer {
     order: 1;
     align-content: center;
     background-color: black;
     color: white;
+    width: 100%;
 }
 
 footer h3 {
@@ -90,13 +93,12 @@ h2 {
 }
 
 main {
-    display: grid;
+    /* display: grid; */
 }
 
 main h2 {
     border-bottom: 0.5px solid lightgrey;
     color: black;
-    width: 100%;
     text-align: center;
     padding-bottom: 0.5rem;
 }
@@ -122,14 +124,14 @@ article {
 
 @supports (display: grid) {
     main {
-        max-width: 10000px;
+        width: 100%;
         margin: 0;
     }
 
     .menu-section {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        grid-gap: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+        grid-column-gap: 1rem;
     }
 }
 
@@ -147,7 +149,7 @@ article {
     display: none;
 }
 
-.course.soldout .soldout {
+/*.course.soldout .soldout {
     position: absolute;
     top: 50%;
     width: 100%;
@@ -234,13 +236,6 @@ p > .tag:after {
     top: 17px;
 }*/
 
-#myBtn {
-    margin-top: auto;
-    margin-left: 1rem;
-    background: snow;
-    border-radius: 4rem;
-    border: none;
-}
 
 
 /*.meal > ul {
@@ -253,77 +248,79 @@ p {
     font-family: 'brandon-grotesque', sans-serif;
 }
 
-header > img {
+.image-dish {
+    position: relative;
+}
+
+.image-dish .sold-out {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    left: 16px;
+    bottom: 16px;
+    background: url(assets/sold_out.png) no-repeat;
+    background-size: 60px 60px;
+    z-index: 1;
+}
+
+header > .image-dish > img {
     width: 100%;
     order: -1;
     align-self: center;
 }
 
-/*.meal > #bestil {
-    margin-top: auto;
-    background: black;
-    color: orange;
-    padding: 0.5rem;
+
+#Btn {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    margin-top: 1.5rem;
+    border-radius: 1rem;
     border: none;
-    border-radius: 1rem;
-    font-size: 1.2rem;
-}
-*/
-
-#myBtn {
-    display: flex;
-    align-content: flex-start;
-}
-
-#myBtn:hover {
-    cursor: pointer;
-}
-
-#bestilBtn {
-    display: block;
-    margin-top: auto;
-    border: 1px solid orange;
-    width: 100%;
-    padding: 1rem;
-    border-radius: 1rem;
-    color: var(--color-orange-lightest);
-    font-size: var(--font-size-base);
-    background: orange;
-    transition: all 0.4s;
+    color: #000;
+    font-size: 1rem;
+    font-family: 'brandon-grotesque', sans-serif;
+    transition: all .3s;
     position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
-#bestilBtn:before {
-    content: "";
+#Btn:after {
+    content: '';
     position: absolute;
-    background: rgba(252, 165, 3, 0.1);
+    border: none;
+    bottom: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    background-color: orange;
     border-radius: 1rem;
-    top: 0;
-    left: 0;
-    transform: scaleX(0);
-    transition: all 0.5s;
-    transform-origin: top left;
+    z-index: -2;
 }
 
-#bestilBtn:hover {
-    cursor: pointer;
-    color: var(--color-white);
-    background: var(--color-orange-light);
-    box-shadow: 2px 2px 0px 0px var(--color-orange-base);
+#Btn:before {
+    content: '';
+    position: absolute;
     border: none;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: navajowhite;
+    transition: all .3s;
+    border-radius: 1rem;
+    z-index: -1;
 }
 
-#bestilBtn:hover:before {
-    transform: scaleX(1);
+#Btn:hover {
+    cursor: pointer;
+    color: #000;
 }
 
-#bestilBtn:active {
-    background: var(--color-pink-light);
-    box-shadow: 2px 2px 0px 0px var(--color-pink-dark);
-    transition: all 0.1s;
+#Btn:hover:before {
+    width: 100%;
 }
+
 
 /* - use tooltip for allergens icons - */
 
