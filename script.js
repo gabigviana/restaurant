@@ -56,7 +56,7 @@ function createCategories(data) {
     a.classList.add("mobile-menu");
 
     const img = document.createElement("img");
-    img.setAttribute("src", "/assets/burger-menu.png");
+    img.setAttribute("src", "assets/burger-menu.png");
     img.setAttribute("width", "25px");
     img.setAttribute("height", "25px");
 
