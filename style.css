@@ -34,7 +34,8 @@ nav {
 }
 
 nav a {
-    display: block;
+    display: none;
+    width: 100%;
     color: #f2f2f2;
     font-family: 'brandon-grotesque', sans-serif;
     text-transform: uppercase;
@@ -49,13 +50,47 @@ nav a:hover {
     color: black;
 }
 
+nav a:first-child {
+    display: block;
+}
+
+nav a:last-child {
+    display: block;
+}
+
+nav .mobile-navbar {
+    height: 0;
+    transition: all 0.5s ease-in;
+    overflow: hidden;
+}
+
+nav .mobile-navbar a {
+    display: block;
+    padding: 0.5rem;
+}
+
+nav .mobile-navbar.open {
+    height: 252px;
+}
+
+@media screen and (min-width: 768px) {
+    nav a {
+        display: block;
+    }
+
+    nav a.mobile-menu {
+        display: none;
+    }
+}
 
 footer {
+    display: flex;
     order: 1;
     align-content: center;
     background-color: black;
     color: white;
     width: 100%;
+    justify-content: center;
 }
 
 footer h3 {
@@ -73,11 +108,29 @@ footer h4 {
     margin-bottom: auto;
 }
 
+footer address {
+    font-family: 'brandon-grotesque', sans-serif;
+    padding-left: 1rem;
+}
+
+footer address:before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    background: url(assets/pin-map.png) no-repeat;
+    background-size: contain;
+}
+
 footer p {
+    padding-left: 1rem;
     text-align: center;
     margin: 0.5rem auto 0.5rem;
 }
 
+footer a {
+    color: #fff;
+}
 
 
 h1,
@@ -411,4 +464,16 @@ header > .image-dish > img {
     padding: 2em;
 }
 
-@media screen and (max-width:700px) {}
+@media screen and (max-width: 768px) {
+  .navbar.responsive {position: relative;}
+  .navbar.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}

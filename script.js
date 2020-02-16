@@ -1,5 +1,5 @@
-// 1. fix width
-// 2. change the order on the  + make nav responsive
+// 1. change the order on the  + make nav responsive
+// 2. put map pin in footer
 
 
 
@@ -20,13 +20,6 @@ fetch("http://kea-alt-del.dk/t5/api/categories")
 function createCategories(data) {
     console.log(data)
     data.forEach(function (oneCat) {
-
-        const a = document.createElement("a");
-        a.setAttribute("href", `#${oneCat}`);
-        a.textContent = oneCat;
-        document.querySelector("#wrapper>header>nav>.navbar").appendChild(a);
-
-
         const section = document.createElement("section");
         section.id = oneCat;
         section.classList.add("menu-section");
@@ -36,7 +29,50 @@ function createCategories(data) {
         document.querySelector("main").appendChild(h2);
         document.querySelector("main").appendChild(section);
 
-    })
+    });
+
+
+    // Build the mobile menu
+
+    // Append the contact and mobile menu
+    data.push("Kontakt");
+
+    // Put the menu items in the dom
+    data.forEach(function (oneCat) {
+        const a = document.createElement("a");
+        a.setAttribute("href", `#${oneCat.toLowerCase()}`);
+        a.textContent = oneCat.toUpperCase();
+        document.querySelector("#wrapper>header>nav>.mobile-navbar").appendChild(a);
+    });
+
+    // Build the desktop menu
+
+    // Prepend the Home menu item
+    data.unshift("home");
+
+    data.forEach(function (oneCat) {
+        const a = document.createElement("a");
+        a.setAttribute("href", `#${oneCat.toLowerCase()}`);
+        a.textContent = oneCat.toUpperCase();
+        document.querySelector("#wrapper>header>nav>.navbar").appendChild(a);
+    });
+
+
+    const a = document.createElement("a");
+    a.setAttribute("href", "#menu");
+    a.onclick = openNav;
+    a.classList.add("mobile-menu");
+
+    const img = document.createElement("img");
+    img.setAttribute("src", "/assets/burger-menu.png");
+    img.setAttribute("width", "25px");
+    img.setAttribute("height", "25px");
+
+
+    a.appendChild(img);
+
+    document.querySelector("#wrapper>header>nav>.navbar").appendChild(a);
+
     getProducts();
 
 }
@@ -151,7 +187,14 @@ function showDetails(data) {
 
 }
 
-
+function openNav() {
+    var navbar = document.querySelector(".mobile-navbar");
+    if (navbar.classList.contains("open")) {
+        navbar.classList.remove("open");
+    } else {
+        navbar.classList.add("open");
+    }
+}
 
 
 //var modal = document.getElementById("myModal");
