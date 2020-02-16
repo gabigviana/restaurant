@@ -1,7 +1,3 @@
-// 1. change the order on the  + make nav responsive
-// 2. put map pin in footer
-
-
 
 
 const modal = document.querySelector(".modal-background");
@@ -32,12 +28,10 @@ function createCategories(data) {
     });
 
 
-    // Build the mobile menu
 
-    // Append the contact and mobile menu
     data.push("Kontakt");
 
-    // Put the menu items in the dom
+
     data.forEach(function (oneCat) {
         const a = document.createElement("a");
         a.setAttribute("href", `#${oneCat.toLowerCase()}`);
@@ -45,9 +39,7 @@ function createCategories(data) {
         document.querySelector("#wrapper>header>nav>.mobile-navbar").appendChild(a);
     });
 
-    // Build the desktop menu
 
-    // Prepend the Home menu item
     data.unshift("home");
 
     data.forEach(function (oneCat) {
@@ -197,22 +189,3 @@ function openNav() {
 }
 
 
-//var modal = document.getElementById("myModal");
-
-//var btn = document.getElementById("myBtn");
-
-//var span = document.getElementsByClassName("close")[0];
-
-//btn.onclick = function () {
-//    modal.style.display = "block";
-//}
-
-//span.onclick = function () {
-//    modal.style.display = "none";
-//}
-
-//window.onclick = function (event) {
-//    if (event.target == modal) {
-//        modal.style.display = "none";
-//    }
-//}
