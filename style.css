@@ -59,10 +59,12 @@ footer {
 }
 
 footer h3 {
-    padding-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 20px;
     text-align: center;
     font-size: 25px;
 }
+
 
 footer h4 {
     text-align: center;
@@ -78,7 +80,6 @@ footer p {
 
 
 
-
 h1,
 h2 {
     font-family: 'brandon-grotesque', sans-serif;
@@ -86,8 +87,13 @@ h2 {
 
 }
 
+h1 {
+    font-size: 2rem;
+}
+
 h2 {
     margin: 1rem 1rem 0;
+    padding-top: 2rem;
     text-transform: uppercase;
 
 }
@@ -145,9 +151,7 @@ article {
 }
 
 
-.course .soldout {
-    display: none;
-}
+
 
 /*.course.soldout .soldout {
     position: absolute;
@@ -322,7 +326,6 @@ header > .image-dish > img {
 }
 
 
-/* - use tooltip for allergens icons - */
 
 .tooltip {
     position: relative;
@@ -336,8 +339,10 @@ header > .image-dish > img {
     background-color: black;
     color: #fff;
     text-align: center;
-    font-size: 12px;
-    /*border-radius: 1rem;*/
+    top: -5px;
+    left: 102%;
+    font-size: 13px;
+    border-radius: 6px;
     padding: 0.3rem 0;
     position: absolute;
     z-index: 1;
@@ -347,7 +352,6 @@ header > .image-dish > img {
     visibility: visible;
 }
 
-/* - - - */
 
 
 /*.modal {
@@ -406,3 +410,5 @@ header > .image-dish > img {
     margin: 1em;
     padding: 2em;
 }
+
+@media screen and (max-width:700px) {}

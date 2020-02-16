@@ -16,10 +16,12 @@
     <div id="wrapper">
         <header>
             <nav>
-               <div class="navbar">
-                <a href="#">HOME</a>
-                <a href="#kontakt">KONTAKT</a>
+
+                <div class="navbar">
+                    <a href="#home">HOME</a>
+                    <a href="#kontakt">KONTAKT</a>
                 </div>
+
             </nav>
         </header>
     </div>
@@ -49,7 +51,7 @@
 
                     <button id="Btn">Read more</button>
 
-                    <div class="tooltip"><span class="tooltiptext">vegetar</span></div>
+
 
 
                 </section>
@@ -63,8 +65,13 @@
             <h3 class="modal-name">NAME</h3>
             <img src="" alt="" class="modal-image" />
             <p class="modal-description">LONG DESCRIPTION</p>
-            <p class="modal-vegetarian"><img src="assets/vegan-symbol-png.png" alt="" width="20px" height="20px"></p>
-            <p class="modal-dairy"><img src="/assets/contains-dairy-2-512.png" alt="" width="20px" height=""></p>
+            <div class="tooltip">
+                <p class="modal-vegetarian"><img src="assets/vegan-symbol-png.png" alt="" width="20px" height="20px"><span class="tooltiptext">Vegetar</span></p>
+            </div>
+            <br>
+            <div class="tooltip">
+                <p class="modal-dairy"><img src="/assets/contains-dairy-2-512.png" alt="" width="20px" height="20px"><span class="tooltiptext">Indeholder laktose</span></p>
+            </div>
             <p class="modal-alcohol"><span>Contains alcohol</span>% Alcohol</p>
             <h4 class="modal-price">PRICE</h4>
         </div>
@@ -75,10 +82,11 @@
             <h3 id="kontakt">KONTAKT</h3>
 
             <h4>Friendly Potato</h4>
-            <address>
-                <p>Vesterbrogade 23</p>
-                <p><a href="tel:60225464">+45 60 22 54 64</a></p>
-            </address>
+
+                <address>
+                    <p>Vesterbrogade 23</p>
+                    <p><a href="tel:60225464">+45 60 22 54 64</a></p>
+                </address>
         </section>
     </footer>
 

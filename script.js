@@ -1,6 +1,6 @@
+// 1. fix width
+// 2. change the order on the  + make nav responsive
 
-// 5. fix width
-// 6. change the order on the  + fix nav:hover
 
 
 
@@ -81,9 +81,7 @@ function showSingleDish(dish) {
 
     if (dish.soldout) {
         copy.querySelector(".sold-out").style.display = "block";
-    }
-
-    else {
+    } else {
         copy.querySelector(".sold-out").style.display = "none";
     }
 
@@ -142,10 +140,9 @@ function showDetails(data) {
     if (data.alcohol) {
         modal.querySelector(".modal-alcohol").style.display = "block";
         modal.querySelector(".modal-alcohol span").textContent = data.alcohol;
+    } else {
+        modal.querySelector(".modal-alcohol").style.display = "none";
     }
-     else {
-         modal.querySelector(".modal-alcohol").style.display = "none";
-     }
 
     // show modal
     modal.classList.remove("hide");
